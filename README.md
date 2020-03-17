@@ -1,2 +1,3 @@
-# gunluk-soz
-her gun sayfaya girdiginde yeni bir soz yazan bir site
+# Günlük Söz
+
+Kullanıcıya her gün bir söz görüntüleyen site
