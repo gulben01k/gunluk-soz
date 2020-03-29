@@ -2,15 +2,15 @@ console.log("index.js is run");
 
 // yazı güncelleme fonksiyonları
 function guncelleTarih(a){
-    $("#baslik").text(a);
+    $("#yazi").text(a);
 }
 
 function guncelleYazi(a){
-    $("#altBaslik").text(a);
+    $("#baslik").text(a);
 }
 
 function guncelleYazar(a){
-    $("#yazi").text(a);
+    $("#altBaslik").text(a);
 }
 
 /** zamanı tanımla */
