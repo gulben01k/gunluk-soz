@@ -28,8 +28,7 @@ Papa.parse("https://raw.githubusercontent.com/gulben01k/gunluk-soz/master/soz-li
         data = results.data;
         
         /** tarihe göre sonucu yaz */
-        var sonuc = 0;
-        for (var i = 0; sonuc==0; i++) {
+        for (var i = 0; data.length > i; i++) {
             
             /**eğer yıl kaydı var ise */
             if(data[i]["yıl"]==zaman.yil){
@@ -42,39 +41,9 @@ Papa.parse("https://raw.githubusercontent.com/gulben01k/gunluk-soz/master/soz-li
                         guncelleTarih(zaman.gun+"."+zaman.ay+"."+zaman.yil);
                         guncelleYazi(data[i]["Söz"]);
                         guncelleYazar(data[i]["Yazar"]);
-                        sonuc = 1;
-                    }
-                    
-                    /** güne ait kayıt yoksa */
-                    else{
-                        
-                        /** kayıt bulunamadı mesajı göster */
-                        guncelleTarih(zaman.yil+" yılı "+zaman.ay+".ayı "+zaman.gun+".gününe ait kayıt bulunamadı");
-                        guncelleYazi("");
-                        guncelleYazar("");
-                        sonuc = 1;
+                        i = data.length;
                     }
                 }
-                
-                /** aya ait kayıt yoksa */
-                else{
-                    
-                    /** kayıt bulunamadı mesajı göster */
-                    guncelleTarih(zaman.yil+" yılı "+zaman.ay+".ayına ait kayıt bulunamadı");
-                    guncelleYazi("");
-                    guncelleYazar("");
-                    sonuc = 1;
-                }
-            }
-            
-            /** yıla ait kayıt yok ise */
-            else{
-                
-                /** kayıt bulunamadı mesajı göster */
-                guncelleTarih(zaman.yil+" yılına ait kayıt bulunamadı");
-                guncelleYazi("");
-                guncelleYazar("");
-                sonuc=1;
             }
         }
     }
